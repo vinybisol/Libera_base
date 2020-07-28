@@ -16,5 +16,19 @@ namespace Libera_base
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string sql = "select * from filiais";
+
+            Conexao c = new Conexao();
+            
+
+            var volta = c.conexao(sql);
+
+
+
+
+        }
     }
 }
