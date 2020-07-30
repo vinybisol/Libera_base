@@ -6,11 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using System.Data.SqlClient;
+using System.Data;
 
 
 namespace Libera_base
 {
-    class Conexao
+    public class Conexao
     {
         public string dbHost = "localhost";
         public string dbPorta = "5432";
@@ -18,18 +20,22 @@ namespace Libera_base
         public string dbSenha = "181271";
         public string dbBase = "dbposto";
 
-        public object conexao(string sql)
+        private static string strConexao = "Server=localhost;Port=5432;User Id=postgres;Password=181271;Database=dbapanhador;";
+        public static NpgsqlConnection Conn { get; set; }
+        public static void Conecta()
         {
-            string connstring = String.Format("Server={0};Port={1};" +
-                    "User Id={2};Password={3};Database={4};",
-                    dbHost, dbPorta, dbUsuario,
-                    dbSenha, dbBase);
-            NpgsqlConnection conn = new NpgsqlConnection(connstring);
-            conn.Open();
-            NpgsqlCommand retorno = new NpgsqlCommand(sql, conn);
-            NpgsqlDataReader retPronto = retorno.ExecuteReader();
-            //conn.Close();
-            return retPronto;
+            Conn = new NpgsqlConnection(strConexao);
+            Conn.Open();
+
+        }
+
+
+        public static void Desconecta()
+        {
+            if (Conn.State == ConnectionState.Open)
+            {
+                Conn.Close();
+            }
         }
 
     }
