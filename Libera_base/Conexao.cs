@@ -8,20 +8,34 @@ using System.Threading.Tasks;
 using Npgsql;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Windows.Forms;
 
 namespace Libera_base
 {
     public class Conexao
     {
-        public string dbHost = "localhost";
-        public string dbPorta = "5432";
-        public string dbUsuario = "postgres";
-        public string dbSenha = "181271";
-        public string dbBase = "dbposto";
-
-        private static string strConexao = "Server=localhost;Port=5432;User Id=postgres;Password=181271;Database=dbapanhador;";
         public static NpgsqlConnection Conn { get; set; }
+        public static object dbPort { get; set; }
+        public static object dbHost { get;  set; }
+        public static object dbUser { get;  set; }
+        public static object dbPassword { get;  set; }
+        public static object dbBanco { get;  set; }
+
+
+        
+
+
+        private static string strConexao = String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    dbHost, dbPort, dbUser,
+                    dbPassword, dbBanco);
+
+        string strConexao1 = String.Format("Server={0};Port={1};" +
+                    "User Id={2};Password={3};Database={4};",
+                    dbHost, dbPort, dbUser,
+                    dbPassword, dbBanco);
+
+        
         public static void Conecta()
         {
             Conn = new NpgsqlConnection(strConexao);

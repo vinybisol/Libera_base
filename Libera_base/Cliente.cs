@@ -17,17 +17,15 @@ namespace Libera_base
             public DataTable PreencheComboBox()
             {
 
-                Conexao.Conecta();
+            Conexao.Conecta();
 
                 NpgsqlCommand comm = new NpgsqlCommand();
-                comm.CommandText = "Select cli_id, cli_razaosocial from Clientes";
+                comm.CommandText = "Select cli_id, cli_razaosocial from Clientes order by cli_id";
                 comm.Connection = Conexao.Conn;
                 DataTable dt = new DataTable();
                 NpgsqlDataReader dr = comm.ExecuteReader();
                 dt.Load(dr);
-
                 Conexao.Desconecta();
-
                 return dt;
             }
 
