@@ -23,7 +23,7 @@ namespace Libera_base
 
 
         
-
+        //casa
 
         private string strConexao = String.Format("Server={0};Port={1};" +
                     "User Id={2};Password={3};Database={4};",
