@@ -25,7 +25,7 @@ namespace Libera_base
         
 
 
-        private static string strConexao = String.Format("Server={0};Port={1};" +
+        private string strConexao = String.Format("Server={0};Port={1};" +
                     "User Id={2};Password={3};Database={4};",
                     dbHost, dbPort, dbUser,
                     dbPassword, dbBanco);
@@ -36,9 +36,9 @@ namespace Libera_base
                     dbPassword, dbBanco);
 
         
-        public static void Conecta()
+        public void Conecta()
         {
-            Conn = new NpgsqlConnection(strConexao);
+            Conn = new NpgsqlConnection(strConexao1);
             Conn.Open();
 
         }

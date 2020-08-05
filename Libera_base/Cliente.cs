@@ -17,8 +17,8 @@ namespace Libera_base
             public DataTable PreencheComboBox()
             {
 
-            Conexao.Conecta();
-
+            Conexao con = new Conexao();
+            con.Conecta();
                 NpgsqlCommand comm = new NpgsqlCommand();
                 comm.CommandText = "Select cli_id, cli_razaosocial from Clientes order by cli_id";
                 comm.Connection = Conexao.Conn;

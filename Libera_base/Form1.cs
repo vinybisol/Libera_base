@@ -27,10 +27,10 @@ namespace Libera_base
             Conexao.dbBanco = textBox4.Text.ToString();
             Conexao.dbPort = textBox5.Text.ToString();
 
-            Cliente objCliente = new Cliente();
+            Cliente cli1 = new Cliente();
 
-            var data = objCliente.PreencheComboBox();
 
+            var data = cli1.PreencheComboBox();
             dataGridView1.DataSource = data;
             dataGridView1.Columns[1].Visible = true;
 
