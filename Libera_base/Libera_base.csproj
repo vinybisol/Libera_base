@@ -79,6 +79,7 @@
   <ItemGroup>
     <Compile Include="Cliente.cs" />
     <Compile Include="Conexao.cs" />
+    <Compile Include="Exclusao.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
