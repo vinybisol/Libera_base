@@ -48,10 +48,34 @@ namespace Libera_base
                 MessageBox.Show(e.Message);
                 return false;
             }
-            
-
-
         }
+
+        public int ExecutaContaLinha(string sql)
+        {
+            int linhas = 0;
+            try
+            {
+                Conexao con = new Conexao();
+                con.Conecta();
+                NpgsqlCommand comm = new NpgsqlCommand();
+                comm.CommandText = sql;
+                comm.Connection = Conexao.Conn;
+                NpgsqlDataReader data = comm.ExecuteReader();
+                while (data.Read())
+                {
+                    linhas = data.GetInt32(0);
+                }
+
+                Conexao.Desconecta();
+                return linhas;
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                return linhas;
+            }
+        }
+
 
     }
 

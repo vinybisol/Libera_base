@@ -48,10 +48,13 @@ namespace Libera_base
             Conexao.dbPassword = textBox3.Text.ToString();
             Conexao.dbBanco = textBox4.Text.ToString();
             Conexao.dbPort = textBox5.Text.ToString();
+            
 
             Exclusao ex = new Exclusao();
+            ex.data = "2020-01-01";
             ex.ExclusaoNotasEmitidas();
-
         }
+
+
     }
 }
