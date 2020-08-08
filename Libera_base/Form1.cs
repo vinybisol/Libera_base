@@ -40,6 +40,12 @@ namespace Libera_base
           
         }
 
-
+        private void btnVerificar_Click(object sender, EventArgs e)
+        {
+            if ( checkAbastecidas.Checked == true)
+            {
+                MessageBox.Show("Abastecidas!");
+            }
+        }
     }
 }
