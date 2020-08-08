@@ -22,25 +22,24 @@ namespace Libera_base
         public static object dbBanco { get;  set; }
 
 
-        
-        //casa
-
         private string strConexao = String.Format("Server={0};Port={1};" +
                     "User Id={2};Password={3};Database={4};",
                     dbHost, dbPort, dbUser,
                     dbPassword, dbBanco);
 
-        string strConexao1 = String.Format("Server={0};Port={1};" +
-                    "User Id={2};Password={3};Database={4};",
-                    dbHost, dbPort, dbUser,
-                    dbPassword, dbBanco);
 
         
         public void Conecta()
         {
-            Conn = new NpgsqlConnection(strConexao1);
-            Conn.Open();
-
+            try
+            {
+                Conn = new NpgsqlConnection(strConexao);
+                Conn.Open();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
         }
 
 

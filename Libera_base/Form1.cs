@@ -40,6 +40,21 @@ namespace Libera_base
           
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Conexao.dbHost = textBox1.Text.ToString();
+            Conexao.dbUser = textBox2.Text.ToString();
+            Conexao.dbPassword = textBox3.Text.ToString();
+            Conexao.dbBanco = textBox4.Text.ToString();
+            Conexao.dbPort = textBox5.Text.ToString();
+            
+
+            Exclusao ex = new Exclusao();
+            ex.data = "2020-01-01";
+            ex.ExclusaoNotasEmitidas();
+        }
+
 
     }
 }
