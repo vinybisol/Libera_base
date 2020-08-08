@@ -40,15 +40,23 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnVerificar = new System.Windows.Forms.Button();
+            this.checkAbastecidas = new System.Windows.Forms.CheckBox();
+            this.checkCupom = new System.Windows.Forms.CheckBox();
+            this.checkHistorico = new System.Windows.Forms.CheckBox();
+            this.checkNotaeletronica = new System.Windows.Forms.CheckBox();
+            this.checkNotaemitida = new System.Windows.Forms.CheckBox();
+            this.checkNotavinculada = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(722, 405);
+            this.button1.Location = new System.Drawing.Point(698, 408);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(90, 30);
             this.button1.TabIndex = 0;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
@@ -150,27 +158,111 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Porta";
             // 
-            // button2
+            // textBox6
             // 
-            this.button2.Location = new System.Drawing.Point(722, 376);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Não aperte";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.textBox6.Location = new System.Drawing.Point(390, 253);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(100, 20);
+            this.textBox6.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(354, 256);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Data";
+            // 
+            // btnVerificar
+            // 
+            this.btnVerificar.Location = new System.Drawing.Point(206, 383);
+            this.btnVerificar.Name = "btnVerificar";
+            this.btnVerificar.Size = new System.Drawing.Size(112, 55);
+            this.btnVerificar.TabIndex = 14;
+            this.btnVerificar.Text = "Verificar CheckedListBox";
+            this.btnVerificar.UseVisualStyleBackColor = true;
+            this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
+            // 
+            // checkAbastecidas
+            // 
+            this.checkAbastecidas.AutoSize = true;
+            this.checkAbastecidas.Location = new System.Drawing.Point(196, 245);
+            this.checkAbastecidas.Name = "checkAbastecidas";
+            this.checkAbastecidas.Size = new System.Drawing.Size(83, 17);
+            this.checkAbastecidas.TabIndex = 15;
+            this.checkAbastecidas.Text = "abastecidas";
+            this.checkAbastecidas.UseVisualStyleBackColor = true;
+            // 
+            // checkCupom
+            // 
+            this.checkCupom.AutoSize = true;
+            this.checkCupom.Location = new System.Drawing.Point(196, 268);
+            this.checkCupom.Name = "checkCupom";
+            this.checkCupom.Size = new System.Drawing.Size(128, 17);
+            this.checkCupom.TabIndex = 16;
+            this.checkCupom.Text = "cupomfiscaleletronico";
+            this.checkCupom.UseVisualStyleBackColor = true;
+            // 
+            // checkHistorico
+            // 
+            this.checkHistorico.AutoSize = true;
+            this.checkHistorico.Location = new System.Drawing.Point(196, 291);
+            this.checkHistorico.Name = "checkHistorico";
+            this.checkHistorico.Size = new System.Drawing.Size(124, 17);
+            this.checkHistorico.TabIndex = 17;
+            this.checkHistorico.Text = "historicotransacaotef";
+            this.checkHistorico.UseVisualStyleBackColor = true;
+            // 
+            // checkNotaeletronica
+            // 
+            this.checkNotaeletronica.AutoSize = true;
+            this.checkNotaeletronica.Location = new System.Drawing.Point(196, 314);
+            this.checkNotaeletronica.Name = "checkNotaeletronica";
+            this.checkNotaeletronica.Size = new System.Drawing.Size(117, 17);
+            this.checkNotaeletronica.TabIndex = 18;
+            this.checkNotaeletronica.Text = "notafiscaleletronica";
+            this.checkNotaeletronica.UseVisualStyleBackColor = true;
+            // 
+            // checkNotaemitida
+            // 
+            this.checkNotaemitida.AutoSize = true;
+            this.checkNotaemitida.Location = new System.Drawing.Point(196, 337);
+            this.checkNotaemitida.Name = "checkNotaemitida";
+            this.checkNotaemitida.Size = new System.Drawing.Size(104, 17);
+            this.checkNotaemitida.TabIndex = 19;
+            this.checkNotaemitida.Text = "notafiscalemitida";
+            this.checkNotaemitida.UseVisualStyleBackColor = true;
+            // 
+            // checkNotavinculada
+            // 
+            this.checkNotavinculada.AutoSize = true;
+            this.checkNotavinculada.Location = new System.Drawing.Point(196, 360);
+            this.checkNotavinculada.Name = "checkNotavinculada";
+            this.checkNotavinculada.Size = new System.Drawing.Size(132, 17);
+            this.checkNotavinculada.TabIndex = 20;
+            this.checkNotavinculada.Text = "notasfiscaisvinculadas";
+            this.checkNotavinculada.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.checkNotavinculada);
+            this.Controls.Add(this.checkNotaemitida);
+            this.Controls.Add(this.checkNotaeletronica);
+            this.Controls.Add(this.checkHistorico);
+            this.Controls.Add(this.checkCupom);
+            this.Controls.Add(this.checkAbastecidas);
+            this.Controls.Add(this.btnVerificar);
+            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
@@ -200,7 +292,15 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnVerificar;
+        private System.Windows.Forms.CheckBox checkAbastecidas;
+        private System.Windows.Forms.CheckBox checkCupom;
+        private System.Windows.Forms.CheckBox checkHistorico;
+        private System.Windows.Forms.CheckBox checkNotaeletronica;
+        private System.Windows.Forms.CheckBox checkNotaemitida;
+        private System.Windows.Forms.CheckBox checkNotavinculada;
     }
 }
 
