@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,8 +13,11 @@ using Npgsql;
 
 namespace Libera_base
 {
-    public partial class Form1 : Form
-    {
+    public partial class Form1 : Form { 
+    
+        public bool cancelamento = false;
+        Cliente Log = new Cliente();
+
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +35,7 @@ namespace Libera_base
 
 
             var data = cli1.PreencheComboBox();
+            Log.criaLog(Log.conLog);
             dataGridView1.DataSource = data;
             dataGridView1.Columns[1].Visible = true;
 
@@ -40,15 +45,6 @@ namespace Libera_base
           
         }
 
-
-        private void btnVerificar_Click(object sender, EventArgs e)
-        {
-            if (checkAbastecidas.Checked == true)
-            {
-                MessageBox.Show("Abastecidas!");
-            }
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             Conexao.dbHost = textBox1.Text.ToString();
@@ -56,12 +52,22 @@ namespace Libera_base
             Conexao.dbPassword = textBox3.Text.ToString();
             Conexao.dbBanco = textBox4.Text.ToString();
             Conexao.dbPort = textBox5.Text.ToString();
-
-
+            if(maskedData.Text == null)
+            {
+                MessageBox.Show("Informe uma data!");
+            }
+            Log.criaLog("Iniciado processo de exclusão");
             Exclusao ex = new Exclusao();
-            ex.data = "2020-01-01";
+            ex.data = maskedData.Text;
             ex.ExclusaoNotasEmitidas();
+            Log.criaLog("Finalizado processo de exclusão");
 
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            cancelamento = true;
+        }
+
     }
 }

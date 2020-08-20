@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Npgsql;
 using System.Data;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Libera_base
 {
@@ -14,6 +15,7 @@ namespace Libera_base
 
         public int ClienteID { get; set; }
         public string Nome { get; set; }
+        public string conLog { get; set; }
 
         public DataTable PreencheComboBox()
         {
@@ -26,11 +28,22 @@ namespace Libera_base
             DataTable dt = new DataTable();
             NpgsqlDataReader dr = comm.ExecuteReader();
             dt.Load(dr);
-            Conexao.Desconecta();
+            con.Desconecta();
             return dt;
         }
 
-        public Boolean ExecutaComando(string sql)
+        public void criaLog(string acao)
+        {
+            string caminhoArquivo = @"C:\logs\LiberaBase.txt";
+
+            if (!File.Exists(caminhoArquivo))
+            {
+                File.Create(caminhoArquivo).Close();
+            }
+            File.AppendAllText(caminhoArquivo, "Log:" + acao + " (" + DateTime.Now.ToShortDateString() + DateTime.Now.ToShortTimeString() + ")\r\n");
+        }
+
+        public int ExecutaComando(string sql)
         {
             try
             {
@@ -38,15 +51,14 @@ namespace Libera_base
                 con.Conecta();
                 NpgsqlCommand comm = new NpgsqlCommand();
                 comm.CommandText = sql;
+                conLog = sql;
                 comm.Connection = Conexao.Conn;
                 comm.ExecuteReader();
-                Conexao.Desconecta();
-                return true;
+                con.Desconecta();
             }
             catch (Exception e)
             {
                 MessageBox.Show(e.Message);
-                return false;
             }
         }
 
@@ -66,7 +78,7 @@ namespace Libera_base
                     linhas = data.GetInt32(0);
                 }
 
-                Conexao.Desconecta();
+                con.Desconecta();
                 return linhas;
             }
             catch (Exception e)

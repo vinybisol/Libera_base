@@ -59,3 +59,4 @@ C:\Users\yohan.velho\Documents\Yohan\Projetos\libera_base\Libera_base\bin\Debug\
 C:\Users\yohan.velho\Documents\Yohan\Projetos\libera_base\Libera_base\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\yohan.velho\Documents\Yohan\Projetos\libera_base\Libera_base\bin\Debug\System.ValueTuple.xml
 C:\Users\yohan.velho\Documents\Yohan\Projetos\libera_base\Libera_base\obj\Debug\Libera_base.csproj.CopyComplete
+C:\Users\yohan.velho\Documents\Yohan\Projetos\libera_base\Libera_base\obj\Debug\Libera_base.csproj.CoreCompileInputs.cache
