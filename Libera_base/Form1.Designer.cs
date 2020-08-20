@@ -40,9 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnVerificar = new System.Windows.Forms.Button();
             this.checkAbastecidas = new System.Windows.Forms.CheckBox();
             this.checkCupom = new System.Windows.Forms.CheckBox();
             this.checkHistorico = new System.Windows.Forms.CheckBox();
@@ -50,6 +48,9 @@
             this.checkNotaemitida = new System.Windows.Forms.CheckBox();
             this.checkNotavinculada = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.maskedData = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 30);
             this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
+            this.button1.Text = "Pesquisar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -80,7 +81,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 2;
-            this.textBox1.Text = "localhost";
+            this.textBox1.Text = "192.168.0.108";
             // 
             // textBox2
             // 
@@ -104,7 +105,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 20);
             this.textBox4.TabIndex = 5;
-            this.textBox4.Text = "dbapanhador";
+            this.textBox4.Text = "dbposto_ibiza";
             // 
             // label1
             // 
@@ -159,13 +160,6 @@
             this.label5.TabIndex = 11;
             this.label5.Text = "Porta";
             // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(390, 253);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 13;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -175,20 +169,10 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "Data";
             // 
-            // btnVerificar
-            // 
-            this.btnVerificar.Location = new System.Drawing.Point(206, 383);
-            this.btnVerificar.Name = "btnVerificar";
-            this.btnVerificar.Size = new System.Drawing.Size(112, 55);
-            this.btnVerificar.TabIndex = 14;
-            this.btnVerificar.Text = "Verificar CheckedListBox";
-            this.btnVerificar.UseVisualStyleBackColor = true;
-            this.btnVerificar.Click += new System.EventHandler(this.btnVerificar_Click);
-            // 
             // checkAbastecidas
             // 
             this.checkAbastecidas.AutoSize = true;
-            this.checkAbastecidas.Location = new System.Drawing.Point(196, 245);
+            this.checkAbastecidas.Location = new System.Drawing.Point(190, 256);
             this.checkAbastecidas.Name = "checkAbastecidas";
             this.checkAbastecidas.Size = new System.Drawing.Size(83, 17);
             this.checkAbastecidas.TabIndex = 15;
@@ -198,7 +182,7 @@
             // checkCupom
             // 
             this.checkCupom.AutoSize = true;
-            this.checkCupom.Location = new System.Drawing.Point(196, 268);
+            this.checkCupom.Location = new System.Drawing.Point(190, 279);
             this.checkCupom.Name = "checkCupom";
             this.checkCupom.Size = new System.Drawing.Size(128, 17);
             this.checkCupom.TabIndex = 16;
@@ -208,7 +192,7 @@
             // checkHistorico
             // 
             this.checkHistorico.AutoSize = true;
-            this.checkHistorico.Location = new System.Drawing.Point(196, 291);
+            this.checkHistorico.Location = new System.Drawing.Point(190, 302);
             this.checkHistorico.Name = "checkHistorico";
             this.checkHistorico.Size = new System.Drawing.Size(124, 17);
             this.checkHistorico.TabIndex = 17;
@@ -218,7 +202,7 @@
             // checkNotaeletronica
             // 
             this.checkNotaeletronica.AutoSize = true;
-            this.checkNotaeletronica.Location = new System.Drawing.Point(196, 314);
+            this.checkNotaeletronica.Location = new System.Drawing.Point(190, 325);
             this.checkNotaeletronica.Name = "checkNotaeletronica";
             this.checkNotaeletronica.Size = new System.Drawing.Size(117, 17);
             this.checkNotaeletronica.TabIndex = 18;
@@ -228,7 +212,7 @@
             // checkNotaemitida
             // 
             this.checkNotaemitida.AutoSize = true;
-            this.checkNotaemitida.Location = new System.Drawing.Point(196, 337);
+            this.checkNotaemitida.Location = new System.Drawing.Point(190, 348);
             this.checkNotaemitida.Name = "checkNotaemitida";
             this.checkNotaemitida.Size = new System.Drawing.Size(104, 17);
             this.checkNotaemitida.TabIndex = 19;
@@ -238,7 +222,7 @@
             // checkNotavinculada
             // 
             this.checkNotavinculada.AutoSize = true;
-            this.checkNotavinculada.Location = new System.Drawing.Point(196, 360);
+            this.checkNotavinculada.Location = new System.Drawing.Point(190, 371);
             this.checkNotavinculada.Name = "checkNotavinculada";
             this.checkNotavinculada.Size = new System.Drawing.Size(132, 17);
             this.checkNotavinculada.TabIndex = 20;
@@ -251,15 +235,45 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 30);
             this.button2.TabIndex = 21;
-            this.button2.Text = "button2";
+            this.button2.Text = "Deletar";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(7, 415);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(483, 23);
+            this.progressBar.TabIndex = 22;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(523, 415);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(147, 23);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar Execução";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // maskedData
+            // 
+            this.maskedData.Location = new System.Drawing.Point(390, 253);
+            this.maskedData.Mask = "0000/00/00";
+            this.maskedData.Name = "maskedData";
+            this.maskedData.Size = new System.Drawing.Size(74, 20);
+            this.maskedData.TabIndex = 24;
+            this.maskedData.Text = "20200110";
+            this.maskedData.ValidatingType = typeof(System.DateTime);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.maskedData);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.checkNotavinculada);
             this.Controls.Add(this.checkNotaemitida);
@@ -267,8 +281,6 @@
             this.Controls.Add(this.checkHistorico);
             this.Controls.Add(this.checkCupom);
             this.Controls.Add(this.checkAbastecidas);
-            this.Controls.Add(this.btnVerificar);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.label4);
@@ -304,9 +316,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnVerificar;
         private System.Windows.Forms.CheckBox checkAbastecidas;
         private System.Windows.Forms.CheckBox checkCupom;
         private System.Windows.Forms.CheckBox checkHistorico;
@@ -314,6 +324,9 @@
         private System.Windows.Forms.CheckBox checkNotaemitida;
         private System.Windows.Forms.CheckBox checkNotavinculada;
         private System.Windows.Forms.Button button2;
+        public System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.ProgressBar progressBar;
+        public System.Windows.Forms.MaskedTextBox maskedData;
     }
 }
 

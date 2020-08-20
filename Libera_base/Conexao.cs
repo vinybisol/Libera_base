@@ -9,6 +9,7 @@ using Npgsql;
 using System.Data.SqlClient;
 using System.Data;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Libera_base
 {
@@ -42,14 +43,12 @@ namespace Libera_base
             }
         }
 
-
-        public static void Desconecta()
+        public void Desconecta()
         {
             if (Conn.State == ConnectionState.Open)
             {
                 Conn.Close();
             }
         }
-
     }
 }
