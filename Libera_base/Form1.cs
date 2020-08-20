@@ -61,6 +61,7 @@ namespace Libera_base
             Exclusao ex = new Exclusao();
             ex.data = "2020-01-01";
             ex.ExclusaoNotasEmitidas();
+            // inicio
 
         }
     }
